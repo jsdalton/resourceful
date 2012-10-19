@@ -7,6 +7,7 @@ vows.describe('resourceful/hooks/sync').addBatch({
     topic: function () {
       return resourceful.define('Resource', function () {
         this.property('name');
+        this.property('counter', Number);
       });
     },
     "synchronous 'before' hooks on `save`": {
@@ -41,6 +42,7 @@ vows.describe('resourceful/hooks/sync').addBatch({
     topic: function () {
       return resourceful.define('Resource2', function () {
         this.property('name');
+        this.property('counter', Number);
       });
     },
     "synchronous 'after' hooks on `save`": {
@@ -85,6 +87,7 @@ vows.describe('resourceful/hooks/sync').addBatch({
     topic: function () {
       return resourceful.define('Resource3', function () {
         this.property('title');
+        this.property('counter', Number);
       });
     },
     "with synchronous 'before' hooks on `create`": {
@@ -119,6 +122,7 @@ vows.describe('resourceful/hooks/sync').addBatch({
     topic: function () {
       return resourceful.define('Resource4', function () {
         this.property('title');
+        this.property('counter', Number);
       });
     },
     "with synchronous 'after' hooks on `create`": {

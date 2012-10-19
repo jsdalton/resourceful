@@ -138,7 +138,14 @@ vows.describe('resourceful').addVows({
         assert.include(r, 'kind');
         assert.isString(r.kind);
       }
-    }
+    }, "When instantiated with an attribute that's not a defined property": {
+        topic: function (R) {
+          return new(R)({ title: 'The Great Gatsby', kind: 'Classic Novels', author: 'F. Scott Fitzgerald' });
+        },
+        "should return `undefined` when that attribute is accessed": function(r) {
+          assert.isUndefined(r.author);
+        }
+    },
   },
   "A Resource with duplicate properties": {
     topic: function () {
